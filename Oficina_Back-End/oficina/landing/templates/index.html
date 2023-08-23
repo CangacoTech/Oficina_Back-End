@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/iconMarvel.png' %}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,400;10..48,700&display=swap"
+        rel="stylesheet">
+    <title>Marvel</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <img src="{% static 'img/logoMarvel.png' %}" alt="Logo Marvel">
+        </div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li>
+                        <h3>Home</h3>
+                    </li>
+                    <li>
+                        <h3><a href="#sobre">Sobre</a></h3>
+                    </li>
+                    <li>
+                        <h3><a href="#curiosidade">Curiosidades</a></h3>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="inicio">
+        <img src="{% static 'img/marvelBanner.jpg' %}" alt="">
+    </section>
+    <section class="sobre" id="sobre">
+        <div class="imgSobre">
+            <img src="{% static 'img/marvelComics.jpg' %}" alt="" srcset="">
+        </div>
+        <div class="textoSobre">
+            <div class="cabecalhoSobre">
+                <header>
+                    <h2>Sobre a Marvel</h2>
+                </header>
+            </div>
+            <div class="historiaSobre">
+                <p>A Marvel Entertainment foi fundada em 1939, nos Estados Unidos, por Martin Goodman. A empresa,
+                    conhecida
+                    originalmente pelos quadrinhos, se transformou em uma das principais empresas do entretenimento
+                    mundial,
+                    com grande presença entre os filmes de maior bilheteria da história.
+                </p>
+                <p>Sua história tem início em 31 de agosto de 1939, enquanto ainda se chamava Timely Comics. Na data,
+                    foi
+                    lançada a edição número 1 da revista Marvel Comics, que introduziu dois personagens que seriam
+                    importantes na história da empresa: o Tocha Humana, e Namor, o Príncipe Submarino</p>
+            </div>
+
+        </div>
+    </section>
+    <section class="curiosidade" id="curiosidade">
+        <div class="cabecalhoCuriosidade">
+            <header>
+                <h1>CURIOSIDADES</h1>
+            </header>
+        </div>
+        <div class="curiosidades">
+            {% for curiosidade in curiosidades %}
+            <div class="cardCuriosidade">
+                <h3>{{ curiosidade.titulo }}</h3>
+                <p>{{ curiosidade.descricao }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <footer>
+        <div class="conteudoFooter">
+            <div class="logoFooter">
+                <img src="{% static 'img/logoMarvel.png' %}" alt="" srcset="">
+            </div>
+            <div class="redesFooter">
+                <h3>Nossas redes sociais</h3>
+                <nav>
+                    <ul>
+                        <li><i class="fa-brands fa-instagram"></i></li>
+                        <li><i class="fa-brands fa-whatsapp"></i></li>
+                        <li><i class="fa-brands fa-facebook"></i></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="footer">
+            <p>@2023 Cangaço & Associação São Jose</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
